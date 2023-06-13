@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    border:solid;
+    display: flex;
+    gap:32px;
+}
+
+.grid{
+    display: flex;
+    flex-direction: column;
+}
