@@ -14,4 +14,18 @@ body{
 .grid{
     display: flex;
     flex-direction: column;
+
+}
+
+
+.griditem{
+    height:60px;
+    width: 60px;
+    background-color: pink;
+}
+
+.hovering{
+    height: 60px;
+    width:60px;
+    background-color: yellow;
 }

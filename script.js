@@ -1,4 +1,4 @@
-window.onload = () =>{
+window.onload = () =>{ 
     const gridContainer= document.querySelector(".grid");
     for(let i=0;i<16;i++){
         const rowDiv= document.createElement('div');
@@ -8,8 +8,13 @@ window.onload = () =>{
         for(let j=0;j<16;j++){
             const colDiv= document.createElement('div');
             colDiv.className= `col${j}`;
-            colDiv.style= 'height:40px; width:40px; background-color:pink';
+            colDiv.classList.add('griditem');
             rowDiv.appendChild(colDiv);
+            colDiv.addEventListener('mouseover', ()=>{
+                colDiv.classList.add('hovering');
+                colDiv.classList.remove('griditem');
+            })
         }
     }
 }
+
