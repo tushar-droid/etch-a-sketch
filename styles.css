@@ -6,9 +6,8 @@ body{
 }
 
 .container{
-    border:solid;
     display: flex;
-    gap:32px;
+    gap:100px;
 }
 
 .grid{
@@ -20,11 +19,17 @@ body{
 
 
 .griditem{
-
     background-color: pink;
 }
 
 .hovering{
 
     background-color: yellow;
+}
+.toolbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:40px
 }

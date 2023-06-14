@@ -18,7 +18,15 @@ function makeGrid(size){
             colDiv.style= ` height:${ht}px; width:${ht}px; `;
             rowDiv.appendChild(colDiv);
             colDiv.addEventListener('mouseover', ()=>{
-                colDiv.classList.add('hovering');
+                const rainbow= checkRainbowMode();
+                if(rainbow){
+                    color= random_bg_color();
+                    colDiv.style.backgroundColor=color;
+                }
+                else{
+                    colDiv.classList.add('hovering');
+                }
+                
                 colDiv.classList.remove('griditem');
             })
         }
@@ -47,3 +55,24 @@ btn.addEventListener("click", () =>{
     removeGrid();
     makeGrid(size);
 })
+
+
+function checkRainbowMode(){
+    const checkBox= document.querySelector('.rainbow-mode');
+    if(checkBox.checked==true){
+        console.log("checkbox is ON");
+        return true;
+    }
+    else{
+        console.log("checkbox is OFF");
+        return false;
+    }
+}
+
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    return bgColor;
+    }
