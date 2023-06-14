@@ -3,6 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .container{
@@ -13,18 +14,10 @@ body{
 .grid{
     display: flex;
     flex-direction: column;
-    height: 960px;
-    width: 960px;
-}
-
-
-.griditem{
-    background-color: pink;
-}
-
-.hovering{
-
-    background-color: yellow;
+    background-color: #fefefe;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    min-height: 500px;
+    min-width: 500px;
 }
 .toolbox{
     display: flex;
@@ -32,4 +25,34 @@ body{
     align-items: center;
     justify-content: center;
     gap:40px
+}
+
+
+button{
+    background-color: #f06449;
+    font-size: 40px;
+    color: #ede6e3;
+    border-radius: 12px;
+    border-color: #36382e;
+    padding: 20px 40px;  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+button:hover{
+    background-color: #B64E39;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+
+
+
+input{
+    height: 30px;
+    width: 30px;
+    margin: 20px;
+}
+
+label{
+    font-size: 40px;
 }

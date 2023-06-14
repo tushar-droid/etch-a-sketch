@@ -8,14 +8,14 @@ function makeGrid(size){
     for(let i=0;i<size;i++){
         const rowDiv= document.createElement('div');
         rowDiv.className= `row${i}`;
-        const ht= 960/size;
+        const ht= 500/size-2;
         rowDiv.style= `display:flex;`
         gridContainer.appendChild(rowDiv);
         for(let j=0;j<size;j++){
             const colDiv= document.createElement('div');
             colDiv.className= `col${j}`;
             colDiv.classList.add('griditem');
-            colDiv.style= ` height:${ht}px; width:${ht}px; `;
+            colDiv.style= ` height:${ht}px; width:${ht}px; margin:1px; border-radius:4px`;
             rowDiv.appendChild(colDiv);
             colDiv.addEventListener('mouseover', ()=>{
                 const rainbow= checkRainbowMode();
@@ -24,10 +24,8 @@ function makeGrid(size){
                     colDiv.style.backgroundColor=color;
                 }
                 else{
-                    colDiv.classList.add('hovering');
+                    colDiv.style.backgroundColor="black";
                 }
-                
-                colDiv.classList.remove('griditem');
             })
         }
     }
@@ -45,7 +43,9 @@ btn.addEventListener("click", () =>{
     let size=prev_size;
     let condition = true;
     size = parseInt(prompt("enter the size (less than 100)"));
-
+    if(isNaN(size)){
+        size=16;
+    }
     while (size>100 || size<=0) {
         alert("Please enter within bounds");
         size= parseInt(prompt("enter the size (less than 100)"));
@@ -60,11 +60,9 @@ btn.addEventListener("click", () =>{
 function checkRainbowMode(){
     const checkBox= document.querySelector('.rainbow-mode');
     if(checkBox.checked==true){
-        console.log("checkbox is ON");
         return true;
     }
     else{
-        console.log("checkbox is OFF");
         return false;
     }
 }
